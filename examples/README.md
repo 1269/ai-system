@@ -1,12 +1,18 @@
 # Examples
 
-Real-world examples of AI system components you can copy and adapt.
+Real-world examples of AI system components, organized by the 9-component framework.
 
-## Skills
-Reusable prompts for specific tasks. Coming soon.
+## Skills (Component 05)
 
-## Integrations
+Reusable packaged workflows. Coming soon.
+
+## Integrations (Component 06)
+
 Configuration examples for connecting your AI system to external tools. Coming soon.
+
+## Automation (Component 09)
+
+Scheduled jobs, webhooks, and recurring workflows. Coming soon.
 
 ---
 

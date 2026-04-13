@@ -1,13 +1,18 @@
 # Guides
 
-Each guide dives deep into one component of the AI system. They're designed to be read in order, but you can jump to whatever you need.
+One guide per component of the AI system. Read them in order or jump to whatever you need.
 
-| # | Guide | Status |
-|---|-------|--------|
-| 1 | [Getting Started](01-getting-started.md) | Available |
-| 2 | Daily Workflows | Coming soon |
-| 3 | Second Brain Setup | Coming soon |
-| 4 | Voice Pipeline | Coming soon |
-| 5 | Memory Patterns | Coming soon |
+| # | Guide |
+|---|-------|
+| — | [Overview — The 9 Components](00-overview.md) |
+| 1 | [Input & Capture](01-capture.md) |
+| 2 | [Context Engineering](02-context.md) |
+| 3 | [Memory](03-memory.md) |
+| 4 | [The Model](04-model.md) |
+| 5 | [Skills](05-skills.md) |
+| 6 | [Integrations](06-integrations.md) |
+| 7 | [Knowledge Base](07-knowledge.md) |
+| 8 | [Orchestration](08-orchestration.md) |
+| 9 | [Automation](09-automation.md) |
 
 New guides are published alongside videos on the [YouTube channel](https://youtube.com/@jashia).

@@ -1,21 +1,35 @@
-# Memory
+# Memory Index
 
-This file stores things the AI has learned across sessions. Update it when you discover something important — preferences, decisions, patterns, or solutions to recurring problems.
+> Your agent's notebook. This is Component 3 — **Memory**.
+>
+> This file is the *index* — one line per memory entry. Entries themselves live in the subfolders below. The index is always loaded into your agent's context; entries get pulled in on demand.
 
-## Key Decisions
-<!-- Add decisions as you make them. Example: -->
-<!-- - Chose Obsidian over Notion for knowledge management (2026-01-15) -->
+## How it works
 
-## Patterns & Preferences
-<!-- Seed with things you notice. Example: -->
-<!-- - Prefers bullet points over paragraphs -->
-<!-- - Works best in 90-minute focus blocks -->
+Memory entries come in four flavors:
 
-## Solutions & Fixes
-<!-- Log solutions to problems you solve together. Example: -->
-<!-- - OAuth token refresh: need to clear cache in ~/.config before re-auth -->
+- **user/** — who you are, preferences, context about your life and work
+- **feedback/** — rules the agent has learned ("don't do X because Y")
+- **project/** — active initiatives, deadlines, in-flight decisions
+- **reference/** — pointers into your Knowledge Base (gist + source)
 
-## Important References
-<!-- Links, file paths, or resources that come up repeatedly. Example: -->
-<!-- - Project repo: https://github.com/username/project -->
-<!-- - API docs: https://docs.example.com -->
+Each entry is a short markdown file in the relevant subfolder. Add a one-line pointer to this index when you create one.
+
+## Index
+
+<!-- Add entries below as you or your agent create them. Example: -->
+<!-- - [Role & background](user/role.md) — senior software engineer, 10yr Go experience -->
+<!-- - [No em dashes](feedback/no-em-dashes.md) — never use em dashes in writing -->
+<!-- - [Hormozi Offers](reference/hormozi-offers.md) — Value Equation framework -->
+
+### User
+<!-- - [entry name](user/file.md) — one-line summary -->
+
+### Feedback
+<!-- - [entry name](feedback/file.md) — one-line summary -->
+
+### Project
+<!-- - [entry name](project/file.md) — one-line summary -->
+
+### Reference
+<!-- - [entry name](reference/file.md) — one-line summary -->
