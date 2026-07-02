@@ -117,6 +117,16 @@ Each guide maps to a component and ships alongside a video.
 
 ---
 
+## Downloadable Skills
+
+Real skills pulled straight from my working system, ready to download and adapt:
+
+| Skill | What it does |
+|-------|--------------|
+| [`/video`](05-skills/video/) | Full video production pipeline: project bootstrap, on-set producer that interviews you while you record, transcription + selects, Descript remap, Remotion/AI asset generation, DaVinci timeline lay-in, and a gated YouTube upload. [Adaptation notes](05-skills/video/README.md). |
+
+---
+
 ## Who This Is For
 
 - **Knowledge workers** who use AI daily and want it to actually know them
