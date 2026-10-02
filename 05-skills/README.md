@@ -13,6 +13,7 @@ A skill is the difference between "here's a 2000-word prompt I paste every Monda
 ```
 skills/
 ├── video/                 REAL: my full video production pipeline (see below)
+│   └── agents/            REAL: Tracy, the video editor sub-agent + persona
 ├── daily-checkin.md       start your day right
 ├── capture.md             quick capture of anything
 ├── weekly-review.md       end-of-week reflection
@@ -23,6 +24,8 @@ skills/
 ## A real one to download
 
 [`video/`](video/) is a working skill lifted straight from my system: an 8-action video production pipeline (bootstrap, on-set producer, transcribe + selects, Descript remap, asset generation, timeline lay-in, gated YouTube upload). Download it, read its [README](video/README.md) for what to adapt, and use its SKILL.md as a reference for structuring your own multi-action skills.
+
+[`video/agents/`](video/agents/) is Tracy, the sub-agent that edits my videos in DaVinci Resolve: her agent file and her persona, with install notes.
 
 ## Why it matters
 
