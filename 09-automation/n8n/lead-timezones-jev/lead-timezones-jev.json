@@ -1,0 +1,270 @@
+{
+  "name": "Lead time zones with Jev (TypeSafe AI)",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "85013b4b-86b5-5fa1-83a9-f2540fa80641",
+      "name": "Run on demand",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Sample leads in a normalized shape. Swap this node for Google Sheets, HubSpot,\n// Airtable, or any CRM node, then map your columns to these field names.\n// Leave `timezone` empty when you don't know it.\nconst leads = [\n  {\n    \"id\": \"lead_001\",\n    \"name\": \"Maria Okafor\",\n    \"title\": \"Owner\",\n    \"company\": \"Okafor Family Dental\",\n    \"email\": \"maria@okaforfamilydental.example\",\n    \"phone\": \"+1 512 555 0142\",\n    \"city\": \"Austin\",\n    \"region\": \"TX\",\n    \"country\": \"US\",\n    \"linkedin_location\": \"Austin, Texas Metropolitan Area\",\n    \"company_hq\": \"Austin, TX\",\n    \"notes\": \"Asked about automating appointment reminders.\",\n    \"timezone\": \"America/Chicago\"\n  },\n  {\n    \"id\": \"lead_002\",\n    \"name\": \"Tom Reilly\",\n    \"title\": \"Managing Partner\",\n    \"company\": \"Reilly & Shaw CPAs\",\n    \"email\": \"tom@reillyshaw.example\",\n    \"phone\": \"+1 617 555 0199\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"Greater Boston\",\n    \"company_hq\": \"\",\n    \"notes\": \"Tax season is brutal, wants intake automated.\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_003\",\n    \"name\": \"Priya Nair\",\n    \"title\": \"Operations Manager\",\n    \"company\": \"Northfield Joinery Ltd\",\n    \"email\": \"priya@northfieldjoinery.co.uk\",\n    \"phone\": \"\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"Manchester\",\n    \"notes\": \"\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_004\",\n    \"name\": \"Jordan Blake\",\n    \"title\": \"Head of Growth\",\n    \"company\": \"Brightline Home Services\",\n    \"email\": \"jordan@brightlinehome.example\",\n    \"phone\": \"\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"US\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"San Francisco, CA\",\n    \"notes\": \"Fully remote. Mentioned skiing before work most days, lives outside Denver.\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_005\",\n    \"name\": \"Sam Whitfield\",\n    \"title\": \"Founder\",\n    \"company\": \"Desert Bloom Landscaping\",\n    \"email\": \"sam@desertbloom.example\",\n    \"phone\": \"+1 480 555 0110\",\n    \"city\": \"Scottsdale\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"\",\n    \"notes\": \"\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_006\",\n    \"name\": \"Chris Lee\",\n    \"title\": \"Marketing Intern\",\n    \"company\": \"\",\n    \"email\": \"chrislee2004@gmail.example\",\n    \"phone\": \"\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"\",\n    \"notes\": \"Downloaded the AI checklist.\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_007\",\n    \"name\": \"Aroha Williams\",\n    \"title\": \"Practice Manager\",\n    \"company\": \"Harbourside Physio\",\n    \"email\": \"aroha@harboursidephysio.co.nz\",\n    \"phone\": \"+64 9 555 0123\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"\",\n    \"notes\": \"\",\n    \"timezone\": \"\"\n  }\n];\n\nreturn leads.map((lead) => ({ json: lead }));\n"
+      },
+      "id": "1f9d90bd-6b72-539e-b4aa-396e802fe432",
+      "name": "Sample leads (swap for your CRM)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "13645007-8690-506d-b3d6-f80aff9311d9",
+              "leftValue": "={{ $json.timezone }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              },
+              "rightValue": ""
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "dc7c42b2-ea48-5dee-bdf3-dc290771cd41",
+      "name": "Time zone already known?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "2f3c41e1-1685-5419-aed7-a32b5a6063ec",
+      "name": "Keep existing time zone",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        700,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "evaluate",
+        "model": {
+          "__rl": true,
+          "mode": "id",
+          "value": "jev-latest"
+        },
+        "stateFormat": "inputItem",
+        "questionsFormat": "json",
+        "questionsJson": "{\n  \"timezone\": {\n    \"type\": \"choice\",\n    \"instructions\": \"Which time zone does this lead most likely work in day to day? Use every location signal in the lead record: city, region, country, phone country and area code, email or website domain, LinkedIn location, company headquarters, and notes. The person's own location outranks their company's headquarters. Pick unknown when there is no real location signal.\",\n    \"criteria\": {\n      \"Pacific/Pago_Pago\": \"UTC-11, no DST. American Samoa, Niue, Midway.\",\n      \"Pacific/Honolulu\": \"UTC-10, no DST. Hawaii, Cook Islands, Tahiti.\",\n      \"America/Adak\": \"UTC-10, DST to UTC-9. Aleutian Islands, Alaska.\",\n      \"America/Anchorage\": \"UTC-9, DST to UTC-8. Alaska (Anchorage, Juneau, Fairbanks).\",\n      \"America/Los_Angeles\": \"UTC-8, DST to UTC-7. US Pacific: California, Washington, Oregon, Nevada; British Columbia (Vancouver); Tijuana.\",\n      \"America/Phoenix\": \"UTC-7, no DST. Arizona (except Navajo Nation), Yukon, northeast British Columbia, Sonora (Hermosillo).\",\n      \"America/Denver\": \"UTC-7, DST to UTC-6. US Mountain: Colorado, Utah, New Mexico, Montana, Wyoming, southern Idaho; Alberta (Calgary, Edmonton); Ciudad Juarez.\",\n      \"America/Mexico_City\": \"UTC-6, no DST. Most of Mexico (Mexico City, Guadalajara, Monterrey); Central America (Guatemala, Costa Rica, El Salvador, Honduras, Nicaragua, Belize); Saskatchewan (Regina).\",\n      \"America/Chicago\": \"UTC-6, DST to UTC-5. US Central: Texas, Illinois, Minnesota, Missouri, Louisiana, Wisconsin, Tennessee (west), Oklahoma, Kansas, Iowa, Alabama, Mississippi; Manitoba (Winnipeg).\",\n      \"America/Bogota\": \"UTC-5, no DST. Colombia, Peru, Ecuador, Panama, Jamaica; Quintana Roo, Mexico (Cancun).\",\n      \"America/New_York\": \"UTC-5, DST to UTC-4. US Eastern: New York, Florida, Georgia, Pennsylvania, Ohio, Michigan, Massachusetts, North and South Carolina, Virginia, DC, Maryland, New Jersey, Indiana (most); Ontario (Toronto, Ottawa); Quebec (Montreal); Bahamas; Haiti; Cuba.\",\n      \"America/Caracas\": \"UTC-4, no DST. Venezuela, Bolivia, Puerto Rico, Dominican Republic, Trinidad, Barbados, most of the Eastern Caribbean, western Brazil (Manaus), Guyana.\",\n      \"America/Halifax\": \"UTC-4, DST to UTC-3. Atlantic Canada: Nova Scotia, New Brunswick, Prince Edward Island, Labrador; Bermuda.\",\n      \"America/Santiago\": \"UTC-3 in southern summer, UTC-4 in southern winter. Chile (mainland).\",\n      \"America/St_Johns\": \"UTC-3:30, DST to UTC-2:30. Newfoundland, Canada.\",\n      \"America/Sao_Paulo\": \"UTC-3, no DST. Brazil (Sao Paulo, Rio de Janeiro, Brasilia, most of the east); Argentina (Buenos Aires); Uruguay; Paraguay; Suriname; French Guiana; Falkland Islands.\",\n      \"America/Nuuk\": \"UTC-2, DST to UTC-1. Greenland (Nuuk).\",\n      \"America/Noronha\": \"UTC-2, no DST. Fernando de Noronha (Brazil), South Georgia.\",\n      \"Atlantic/Cape_Verde\": \"UTC-1, no DST. Cape Verde.\",\n      \"Atlantic/Azores\": \"UTC-1, DST to UTC+0. Azores (Portugal).\",\n      \"Africa/Abidjan\": \"UTC+0, no DST. Iceland; West Africa: Ghana, Senegal, Ivory Coast, Mali, Sierra Leone, Liberia, Gambia, Guinea, Burkina Faso, Togo.\",\n      \"Europe/London\": \"UTC+0, DST to UTC+1. United Kingdom, Ireland, Portugal (Lisbon), Canary Islands, Faroe Islands.\",\n      \"Africa/Lagos\": \"UTC+1, no DST. Nigeria, Algeria, Tunisia, Morocco, Cameroon, Angola, DR Congo (Kinshasa), Congo, Gabon, Chad, Niger.\",\n      \"Europe/Paris\": \"UTC+1, DST to UTC+2. Central Europe: France, Germany, Spain, Italy, Netherlands, Belgium, Switzerland, Austria, Poland, Czechia, Sweden, Norway, Denmark, Hungary, Croatia, Serbia, Slovakia, Slovenia, Luxembourg, Malta.\",\n      \"Africa/Johannesburg\": \"UTC+2, no DST. South Africa, Zimbabwe, Zambia, Mozambique, Malawi, Botswana, Rwanda, Burundi, Libya, Sudan, Namibia, DR Congo (Lubumbashi).\",\n      \"Europe/Athens\": \"UTC+2, DST to UTC+3. Eastern Europe: Greece, Romania, Bulgaria, Finland, Ukraine, Moldova, Estonia, Latvia, Lithuania, Cyprus; Egypt; Israel; Lebanon.\",\n      \"Europe/Istanbul\": \"UTC+3, no DST. Turkey, Saudi Arabia, Qatar, Kuwait, Bahrain, Iraq, Jordan, Syria, Yemen; Moscow and western Russia; Belarus; East Africa: Kenya, Ethiopia, Tanzania, Uganda, Somalia, Madagascar.\",\n      \"Asia/Tehran\": \"UTC+3:30, no DST. Iran.\",\n      \"Asia/Dubai\": \"UTC+4, no DST. United Arab Emirates, Oman, Azerbaijan, Georgia, Armenia, Mauritius, Seychelles, Reunion, Samara (Russia).\",\n      \"Asia/Kabul\": \"UTC+4:30, no DST. Afghanistan.\",\n      \"Asia/Karachi\": \"UTC+5, no DST. Pakistan, Uzbekistan, Tajikistan, Turkmenistan, Kazakhstan, Maldives, Yekaterinburg (Russia).\",\n      \"Asia/Kolkata\": \"UTC+5:30, no DST. India, Sri Lanka.\",\n      \"Asia/Kathmandu\": \"UTC+5:45, no DST. Nepal.\",\n      \"Asia/Dhaka\": \"UTC+6, no DST. Bangladesh, Bhutan, Kyrgyzstan, Omsk (Russia).\",\n      \"Asia/Yangon\": \"UTC+6:30, no DST. Myanmar, Cocos Islands.\",\n      \"Asia/Bangkok\": \"UTC+7, no DST. Thailand, Vietnam, Cambodia, Laos, western Indonesia (Jakarta), Novosibirsk and Krasnoyarsk (Russia), western Mongolia.\",\n      \"Asia/Singapore\": \"UTC+8, no DST. China, Hong Kong, Taiwan, Singapore, Malaysia, Philippines, central Indonesia (Bali), Western Australia (Perth), Mongolia (Ulaanbaatar), Irkutsk (Russia).\",\n      \"Australia/Eucla\": \"UTC+8:45, no DST. Eucla, Western Australia.\",\n      \"Asia/Tokyo\": \"UTC+9, no DST. Japan, South Korea, North Korea, eastern Indonesia (Papua), Timor-Leste, Palau, Yakutsk (Russia).\",\n      \"Australia/Darwin\": \"UTC+9:30, no DST. Northern Territory, Australia.\",\n      \"Australia/Adelaide\": \"UTC+9:30, DST to UTC+10:30 in southern summer. South Australia; Broken Hill.\",\n      \"Australia/Brisbane\": \"UTC+10, no DST. Queensland (Australia), Guam, Papua New Guinea, Vladivostok (Russia).\",\n      \"Australia/Sydney\": \"UTC+10, DST to UTC+11 in southern summer. New South Wales, Victoria (Melbourne), ACT (Canberra), Tasmania (Hobart).\",\n      \"Australia/Lord_Howe\": \"UTC+10:30, DST to UTC+11 in southern summer. Lord Howe Island.\",\n      \"Pacific/Guadalcanal\": \"UTC+11, no DST. Solomon Islands, New Caledonia, Vanuatu, Bougainville, Magadan and Sakhalin (Russia).\",\n      \"Pacific/Norfolk\": \"UTC+11, DST to UTC+12 in southern summer. Norfolk Island.\",\n      \"Pacific/Fiji\": \"UTC+12, no DST. Fiji, Marshall Islands, Tuvalu, Kamchatka (Russia).\",\n      \"Pacific/Auckland\": \"UTC+12, DST to UTC+13 in southern summer. New Zealand.\",\n      \"Pacific/Chatham\": \"UTC+12:45, DST to UTC+13:45 in southern summer. Chatham Islands (New Zealand).\",\n      \"Pacific/Tongatapu\": \"UTC+13, no DST. Tonga, Samoa, Tokelau, Phoenix Islands.\",\n      \"Pacific/Kiritimati\": \"UTC+14, no DST. Line Islands (Kiribati).\",\n      \"unknown\": \"The lead data has no real location signal (no city, region, country, phone country code, or location-specific domain), or the signals conflict too much to pick one.\"\n    }\n  },\n  \"is_decision_maker\": {\n    \"type\": \"noul\",\n    \"instructions\": \"Based on this lead's title and company, can this person approve paying for an outside service for their business, such as an AI automation setup?\",\n    \"criteria\": {\n      \"true\": \"Owner, founder, partner, executive, or department head with budget authority\",\n      \"false\": \"Individual contributor, assistant, intern, student, or someone who would need a boss to sign off\"\n    }\n  },\n  \"lead_fit\": {\n    \"type\": \"score\",\n    \"instructions\": \"How well does this lead fit a service that sets up AI automations for small and mid-size traditional businesses, such as trades, clinics, law and accounting firms, agencies, and local services?\",\n    \"criteria\": [\n      \"Not a fit: student, job seeker, large enterprise, or a company that sells AI software itself\",\n      \"Weak fit: the right kind of business, but the role or company size is a stretch\",\n      \"Good fit: a small or mid-size traditional business and a relevant role\",\n      \"Ideal fit: owner or operator of a small or mid-size traditional business with obvious manual work to automate\"\n    ]\n  }\n}",
+        "options": {}
+      },
+      "id": "aa91eb80-3af3-5ce4-886e-f99bcb1cb4ed",
+      "name": "Jev: time zone, decision-maker, fit",
+      "type": "@typesafe-ai/n8n-nodes-typesafe-ai.typeSafeAi",
+      "typeVersion": 1,
+      "position": [
+        700,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Turn Jev's answers into flat fields your CRM can store.\n// Jev's guess goes in timezone_inferred, so it never overwrites a value a person entered.\nconst THRESHOLD = 0.8; // minimum confidence to write the time zone automatically\n\nreturn $input.all().map((item) => {\n  const { answers, model, ...lead } = item.json;\n  const tz = answers.timezone;\n  const confident = tz.choice !== 'unknown' && tz.confidence >= THRESHOLD;\n  return {\n    json: {\n      ...lead,\n      timezone_inferred: tz.choice,\n      timezone_confidence: Number(tz.confidence.toFixed(2)),\n      timezone_status: confident ? 'auto' : 'review',\n      decision_maker_probability: Number(answers.is_decision_maker.noul.toFixed(2)),\n      lead_fit_score: Number(answers.lead_fit.score.toFixed(2)), // 0 = not a fit, 3 = ideal\n      jev_model: model,\n    },\n  };\n});\n"
+      },
+      "id": "b00eb02f-7654-5b91-a0dc-02a9a30352c9",
+      "name": "Flatten answers",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        940,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "7dd020ea-4502-5ac5-b324-2328a64f72f9",
+              "leftValue": "={{ $json.timezone_status }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              },
+              "rightValue": "auto"
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "cf2d6984-6982-57a2-89b6-df4e6e999b95",
+      "name": "Confident enough?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1160,
+        400
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9282d85c-4c2c-5c10-9a73-0032838568cf",
+      "name": "Write back to CRM (replace me)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        300
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "56f484f2-fcd6-5195-8b77-537c09d25d6e",
+      "name": "Needs human review (replace me)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Lead time zones with Jev\n\nStop paying an LLM to write an essay about where someone lives. Jev (TypeSafe AI) answers with a typed value and a probability.\n\nOne request asks three questions, one of each type:\n- **Choice** `timezone`: one of 51 time zones, or `unknown`\n- **Noul** `is_decision_maker`: probability of yes, 0 to 1\n- **Score** `lead_fit`: 0 (not a fit) to 3 (ideal)\n\nOnly leads with a confident time zone get written back. Everything else goes to review.\n\n**Setup:** install the verified **TypeSafe AI** node, add your API key from typesafe.ai, then swap the sample leads node for your CRM.",
+        "height": 440,
+        "width": 520,
+        "color": 5
+      },
+      "id": "e14421ba-96b5-5d8a-b4ea-eada3cc5e04b",
+      "name": "Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        -200
+      ]
+    }
+  ],
+  "connections": {
+    "Run on demand": {
+      "main": [
+        [
+          {
+            "node": "Sample leads (swap for your CRM)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sample leads (swap for your CRM)": {
+      "main": [
+        [
+          {
+            "node": "Time zone already known?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Time zone already known?": {
+      "main": [
+        [
+          {
+            "node": "Keep existing time zone",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Jev: time zone, decision-maker, fit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jev: time zone, decision-maker, fit": {
+      "main": [
+        [
+          {
+            "node": "Flatten answers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Flatten answers": {
+      "main": [
+        [
+          {
+            "node": "Confident enough?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confident enough?": {
+      "main": [
+        [
+          {
+            "node": "Write back to CRM (replace me)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Needs human review (replace me)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "tags": []
+}

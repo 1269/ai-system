@@ -15,6 +15,7 @@ automation/
 ├── launchd/          macOS LaunchAgents for scheduled jobs
 ├── cron/             cross-platform cron jobs
 ├── webhooks/         event-triggered workflows
+├── n8n/              importable n8n workflow templates
 └── examples/         daily digest, weekly review, morning briefing
 ```
 
