@@ -47,6 +47,8 @@ These are real results from `jev-1.13.0`, every one at 0.96 confidence or higher
 
 ## Set it up
 
+No n8n yet? [`SETUP-PROMPT.md`](./SETUP-PROMPT.md) is a prompt you hand to Claude Code: it runs n8n on your machine in Docker, installs the TypeSafe AI node, and connects n8n's MCP server so Claude Code can build workflows in it. Then come back here.
+
 1. **Install the TypeSafe AI node.** It's a verified community node. On n8n Cloud, search for "TypeSafe AI" in the nodes panel. Self-hosted: **Settings → Community Nodes → Install**, package `@typesafe-ai/n8n-nodes-typesafe-ai`.
 2. **Import the workflow.** Download [`lead-timezones-jev.json`](./lead-timezones-jev.json), then in n8n open a new workflow and choose **Import from File** (or copy the file's contents and paste onto the canvas).
 3. **Add your API key.** Open the Jev node, create a **TypeSafe AI API** credential, and paste a key from [typesafe.ai](https://typesafe.ai).
