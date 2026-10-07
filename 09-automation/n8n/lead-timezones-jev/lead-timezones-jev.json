@@ -9,20 +9,20 @@
       "typeVersion": 1,
       "position": [
         0,
-        300
+        304
       ]
     },
     {
       "parameters": {
-        "jsCode": "// Sample leads in a normalized shape. Swap this node for Google Sheets, HubSpot,\n// Airtable, or any CRM node, then map your columns to these field names.\n// Leave `timezone` empty when you don't know it.\nconst leads = [\n  {\n    \"id\": \"lead_001\",\n    \"name\": \"Maria Okafor\",\n    \"title\": \"Owner\",\n    \"company\": \"Okafor Family Dental\",\n    \"email\": \"maria@okaforfamilydental.example\",\n    \"phone\": \"+1 512 555 0142\",\n    \"city\": \"Austin\",\n    \"region\": \"TX\",\n    \"country\": \"US\",\n    \"linkedin_location\": \"Austin, Texas Metropolitan Area\",\n    \"company_hq\": \"Austin, TX\",\n    \"notes\": \"Asked about automating appointment reminders.\",\n    \"timezone\": \"America/Chicago\"\n  },\n  {\n    \"id\": \"lead_002\",\n    \"name\": \"Tom Reilly\",\n    \"title\": \"Managing Partner\",\n    \"company\": \"Reilly & Shaw CPAs\",\n    \"email\": \"tom@reillyshaw.example\",\n    \"phone\": \"+1 617 555 0199\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"Greater Boston\",\n    \"company_hq\": \"\",\n    \"notes\": \"Tax season is brutal, wants intake automated.\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_003\",\n    \"name\": \"Priya Nair\",\n    \"title\": \"Operations Manager\",\n    \"company\": \"Northfield Joinery Ltd\",\n    \"email\": \"priya@northfieldjoinery.co.uk\",\n    \"phone\": \"\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"Manchester\",\n    \"notes\": \"\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_004\",\n    \"name\": \"Jordan Blake\",\n    \"title\": \"Head of Growth\",\n    \"company\": \"Brightline Home Services\",\n    \"email\": \"jordan@brightlinehome.example\",\n    \"phone\": \"\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"US\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"San Francisco, CA\",\n    \"notes\": \"Fully remote. Mentioned skiing before work most days, lives outside Denver.\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_005\",\n    \"name\": \"Sam Whitfield\",\n    \"title\": \"Founder\",\n    \"company\": \"Desert Bloom Landscaping\",\n    \"email\": \"sam@desertbloom.example\",\n    \"phone\": \"+1 480 555 0110\",\n    \"city\": \"Scottsdale\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"\",\n    \"notes\": \"\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_006\",\n    \"name\": \"Chris Lee\",\n    \"title\": \"Marketing Intern\",\n    \"company\": \"\",\n    \"email\": \"chrislee2004@gmail.example\",\n    \"phone\": \"\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"\",\n    \"notes\": \"Downloaded the AI checklist.\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_007\",\n    \"name\": \"Aroha Williams\",\n    \"title\": \"Practice Manager\",\n    \"company\": \"Harbourside Physio\",\n    \"email\": \"aroha@harboursidephysio.co.nz\",\n    \"phone\": \"+64 9 555 0123\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"\",\n    \"notes\": \"\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_008\",\n    \"name\": \"Ray Delgado\",\n    \"title\": \"Owner\",\n    \"company\": \"Saguaro State Roofing\",\n    \"email\": \"ray@saguarostateroofing.example\",\n    \"phone\": \"+1 602 555 0187\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"\",\n    \"notes\": \"Crews start at 5am in summer to beat the heat. Said 'we never change our clocks out here.' Quotes and invoices still done by hand on a clipboard.\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_009\",\n    \"name\": \"Lena Hoffmann\",\n    \"title\": \"Head of Operations\",\n    \"company\": \"Northpoint Legal Staffing\",\n    \"email\": \"lena@northpointlegal.example\",\n    \"phone\": \"+49 30 555 0144\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"Chicago, IL\",\n    \"notes\": \"Moved to Berlin last year. Still covers the US accounts, asked for calls before 4pm her time.\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_010\",\n    \"name\": \"Mia Tran\",\n    \"title\": \"Front Desk Coordinator\",\n    \"company\": \"Swan River Physio\",\n    \"email\": \"mia@swanriverphysio.com.au\",\n    \"phone\": \"+61 8 5550 1234\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"\",\n    \"notes\": \"Plans afternoon bookings around the Fremantle Doctor. The owner, Dr. Patel, signs off on anything over $500.\",\n    \"timezone\": \"\"\n  },\n  {\n    \"id\": \"lead_011\",\n    \"name\": \"\",\n    \"title\": \"\",\n    \"company\": \"\",\n    \"email\": \"jk.2004@gmail.example\",\n    \"phone\": \"\",\n    \"city\": \"\",\n    \"region\": \"\",\n    \"country\": \"\",\n    \"linkedin_location\": \"\",\n    \"company_hq\": \"\",\n    \"notes\": \"\",\n    \"timezone\": \"\"\n  }\n];\n\nreturn leads.map((lead) => ({ json: lead }));\n"
+        "jsCode": "// Demo data: who's doing the outreach (`me`) plus the leads.\n// Edit `me` to describe your business. Swap the leads for your Google Sheets, HubSpot, Airtable, or CRM node and keep `me`.\n// Each item goes out as { me, lead } so Jev sees both. Leave lead.timezone empty when you don't know it.\nconst data = {\n  \"me\": {\n    \"name\": \"Ja Shia\",\n    \"business\": \"Sets up AI automations for small and mid-size traditional businesses\",\n    \"ideal_customer\": \"Owners and operators of trades, clinics, law and accounting firms, agencies and local services with obvious manual work\",\n    \"not_a_fit\": \"Large enterprises, students, job seekers, companies that sell AI software\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"working_hours\": \"08:00-17:00\"\n  },\n  \"leads\": [\n    {\n      \"id\": \"lead_001\",\n      \"name\": \"Maria Okafor\",\n      \"title\": \"Owner\",\n      \"company\": \"Okafor Family Dental\",\n      \"email\": \"maria@okaforfamilydental.example\",\n      \"phone\": \"+1 512 555 0142\",\n      \"city\": \"Austin\",\n      \"region\": \"TX\",\n      \"country\": \"US\",\n      \"linkedin_location\": \"Austin, Texas Metropolitan Area\",\n      \"company_hq\": \"Austin, TX\",\n      \"notes\": \"Asked about automating appointment reminders.\",\n      \"timezone\": \"America/Chicago\"\n    },\n    {\n      \"id\": \"lead_002\",\n      \"name\": \"Tom Reilly\",\n      \"title\": \"Managing Partner\",\n      \"company\": \"Reilly & Shaw CPAs\",\n      \"email\": \"tom@reillyshaw.example\",\n      \"phone\": \"+1 617 555 0199\",\n      \"city\": \"\",\n      \"region\": \"\",\n      \"country\": \"\",\n      \"linkedin_location\": \"Greater Boston\",\n      \"company_hq\": \"\",\n      \"notes\": \"Tax season is brutal, wants intake automated.\",\n      \"timezone\": \"\"\n    },\n    {\n      \"id\": \"lead_003\",\n      \"name\": \"Priya Nair\",\n      \"title\": \"Operations Manager\",\n      \"company\": \"Northfield Joinery Ltd\",\n      \"email\": \"priya@northfieldjoinery.co.uk\",\n      \"phone\": \"\",\n      \"city\": \"\",\n      \"region\": \"\",\n      \"country\": \"\",\n      \"linkedin_location\": \"\",\n      \"company_hq\": \"Manchester\",\n      \"notes\": \"\",\n      \"timezone\": \"\"\n    },\n    {\n      \"id\": \"lead_004\",\n      \"name\": \"Jordan Blake\",\n      \"title\": \"Head of Growth\",\n      \"company\": \"Brightline Home Services\",\n      \"email\": \"jordan@brightlinehome.example\",\n      \"phone\": \"\",\n      \"city\": \"\",\n      \"region\": \"\",\n      \"country\": \"US\",\n      \"linkedin_location\": \"\",\n      \"company_hq\": \"San Francisco, CA\",\n      \"notes\": \"Fully remote. Mentioned skiing before work most days, lives outside Denver.\",\n      \"timezone\": \"\"\n    },\n    {\n      \"id\": \"lead_005\",\n      \"name\": \"Sam Whitfield\",\n      \"title\": \"Founder\",\n      \"company\": \"Desert Bloom Landscaping\",\n      \"email\": \"sam@desertbloom.example\",\n      \"phone\": \"+1 480 555 0110\",\n      \"city\": \"Scottsdale\",\n      \"region\": \"\",\n      \"country\": \"\",\n      \"linkedin_location\": \"\",\n      \"company_hq\": \"\",\n      \"notes\": \"\",\n      \"timezone\": \"\"\n    },\n    {\n      \"id\": \"lead_006\",\n      \"name\": \"Chris Lee\",\n      \"title\": \"Marketing Intern\",\n      \"company\": \"\",\n      \"email\": \"chrislee2004@gmail.example\",\n      \"phone\": \"\",\n      \"city\": \"\",\n      \"region\": \"\",\n      \"country\": \"\",\n      \"linkedin_location\": \"\",\n      \"company_hq\": \"\",\n      \"notes\": \"Downloaded the AI checklist.\",\n      \"timezone\": \"\"\n    },\n    {\n      \"id\": \"lead_007\",\n      \"name\": \"Aroha Williams\",\n      \"title\": \"Practice Manager\",\n      \"company\": \"Harbourside Physio\",\n      \"email\": \"aroha@harboursidephysio.co.nz\",\n      \"phone\": \"+64 9 555 0123\",\n      \"city\": \"\",\n      \"region\": \"\",\n      \"country\": \"\",\n      \"linkedin_location\": \"\",\n      \"company_hq\": \"\",\n      \"notes\": \"\",\n      \"timezone\": \"\"\n    },\n    {\n      \"id\": \"lead_008\",\n      \"name\": \"Ray Delgado\",\n      \"title\": \"Owner\",\n      \"company\": \"Saguaro State Roofing\",\n      \"email\": \"ray@saguarostateroofing.example\",\n      \"phone\": \"+1 602 555 0187\",\n      \"city\": \"\",\n      \"region\": \"\",\n      \"country\": \"\",\n      \"linkedin_location\": \"\",\n      \"company_hq\": \"\",\n      \"notes\": \"Crews start at 5am in summer to beat the heat. Said 'we never change our clocks out here.' Quotes and invoices still done by hand on a clipboard.\",\n      \"timezone\": \"\"\n    },\n    {\n      \"id\": \"lead_009\",\n      \"name\": \"Lena Hoffmann\",\n      \"title\": \"Head of Operations\",\n      \"company\": \"Northpoint Legal Staffing\",\n      \"email\": \"lena@northpointlegal.example\",\n      \"phone\": \"+49 30 555 0144\",\n      \"city\": \"\",\n      \"region\": \"\",\n      \"country\": \"\",\n      \"linkedin_location\": \"\",\n      \"company_hq\": \"Chicago, IL\",\n      \"notes\": \"Moved to Berlin last year. Still covers the US accounts, asked for calls before 4pm her time.\",\n      \"timezone\": \"\"\n    },\n    {\n      \"id\": \"lead_010\",\n      \"name\": \"Mia Tran\",\n      \"title\": \"Front Desk Coordinator\",\n      \"company\": \"Swan River Physio\",\n      \"email\": \"mia@swanriverphysio.com.au\",\n      \"phone\": \"+61 8 5550 1234\",\n      \"city\": \"\",\n      \"region\": \"\",\n      \"country\": \"\",\n      \"linkedin_location\": \"\",\n      \"company_hq\": \"\",\n      \"notes\": \"Plans afternoon bookings around the Fremantle Doctor. The owner, Dr. Patel, signs off on anything over $500.\",\n      \"timezone\": \"\"\n    },\n    {\n      \"id\": \"lead_011\",\n      \"name\": \"\",\n      \"title\": \"\",\n      \"company\": \"\",\n      \"email\": \"jk.2004@gmail.example\",\n      \"phone\": \"\",\n      \"city\": \"\",\n      \"region\": \"\",\n      \"country\": \"\",\n      \"linkedin_location\": \"\",\n      \"company_hq\": \"\",\n      \"notes\": \"\",\n      \"timezone\": \"\"\n    }\n  ]\n};\n\nreturn data.leads.map((lead) => ({ json: { me: data.me, lead } }));\n"
       },
       "id": "1f9d90bd-6b72-539e-b4aa-396e802fe432",
       "name": "Sample leads (swap for your CRM)",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        220,
-        300
+        224,
+        304
       ]
     },
     {
@@ -37,7 +37,7 @@
           "conditions": [
             {
               "id": "13645007-8690-506d-b3d6-f80aff9311d9",
-              "leftValue": "={{ $json.timezone }}",
+              "leftValue": "={{ $json.lead.timezone }}",
               "operator": {
                 "type": "string",
                 "operation": "notEmpty",
@@ -55,8 +55,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        440,
-        300
+        448,
+        304
       ]
     },
     {
@@ -66,13 +66,12 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        700,
-        140
+        704,
+        144
       ]
     },
     {
       "parameters": {
-        "operation": "evaluate",
         "model": {
           "__rl": true,
           "mode": "id",
@@ -80,7 +79,7 @@
         },
         "stateFormat": "inputItem",
         "questionsFormat": "json",
-        "questionsJson": "{\n  \"timezone\": {\n    \"type\": \"choice\",\n    \"instructions\": \"Which time zone does this lead most likely work in day to day? Use every location signal in the lead record: city, region, country, phone country and area code, email or website domain, LinkedIn location, company headquarters, and notes. The person's own location outranks their company's headquarters. Pick unknown when there is no real location signal.\",\n    \"criteria\": {\n      \"Pacific/Pago_Pago\": \"UTC-11, no DST. American Samoa, Niue, Midway.\",\n      \"Pacific/Honolulu\": \"UTC-10, no DST. Hawaii, Cook Islands, Tahiti.\",\n      \"America/Adak\": \"UTC-10, DST to UTC-9. Aleutian Islands, Alaska.\",\n      \"America/Anchorage\": \"UTC-9, DST to UTC-8. Alaska (Anchorage, Juneau, Fairbanks).\",\n      \"America/Los_Angeles\": \"UTC-8, DST to UTC-7. US Pacific: California, Washington, Oregon, Nevada; British Columbia (Vancouver); Tijuana.\",\n      \"America/Phoenix\": \"UTC-7, no DST. Arizona (except Navajo Nation), Yukon, northeast British Columbia, Sonora (Hermosillo).\",\n      \"America/Denver\": \"UTC-7, DST to UTC-6. US Mountain: Colorado, Utah, New Mexico, Montana, Wyoming, southern Idaho; Alberta (Calgary, Edmonton); Ciudad Juarez.\",\n      \"America/Mexico_City\": \"UTC-6, no DST. Most of Mexico (Mexico City, Guadalajara, Monterrey); Central America (Guatemala, Costa Rica, El Salvador, Honduras, Nicaragua, Belize); Saskatchewan (Regina).\",\n      \"America/Chicago\": \"UTC-6, DST to UTC-5. US Central: Texas, Illinois, Minnesota, Missouri, Louisiana, Wisconsin, Tennessee (west), Oklahoma, Kansas, Iowa, Alabama, Mississippi; Manitoba (Winnipeg).\",\n      \"America/Bogota\": \"UTC-5, no DST. Colombia, Peru, Ecuador, Panama, Jamaica; Quintana Roo, Mexico (Cancun).\",\n      \"America/New_York\": \"UTC-5, DST to UTC-4. US Eastern: New York, Florida, Georgia, Pennsylvania, Ohio, Michigan, Massachusetts, North and South Carolina, Virginia, DC, Maryland, New Jersey, Indiana (most); Ontario (Toronto, Ottawa); Quebec (Montreal); Bahamas; Haiti; Cuba.\",\n      \"America/Caracas\": \"UTC-4, no DST. Venezuela, Bolivia, Puerto Rico, Dominican Republic, Trinidad, Barbados, most of the Eastern Caribbean, western Brazil (Manaus), Guyana.\",\n      \"America/Halifax\": \"UTC-4, DST to UTC-3. Atlantic Canada: Nova Scotia, New Brunswick, Prince Edward Island, Labrador; Bermuda.\",\n      \"America/Santiago\": \"UTC-3 in southern summer, UTC-4 in southern winter. Chile (mainland).\",\n      \"America/St_Johns\": \"UTC-3:30, DST to UTC-2:30. Newfoundland, Canada.\",\n      \"America/Sao_Paulo\": \"UTC-3, no DST. Brazil (Sao Paulo, Rio de Janeiro, Brasilia, most of the east); Argentina (Buenos Aires); Uruguay; Paraguay; Suriname; French Guiana; Falkland Islands.\",\n      \"America/Nuuk\": \"UTC-2, DST to UTC-1. Greenland (Nuuk).\",\n      \"America/Noronha\": \"UTC-2, no DST. Fernando de Noronha (Brazil), South Georgia.\",\n      \"Atlantic/Cape_Verde\": \"UTC-1, no DST. Cape Verde.\",\n      \"Atlantic/Azores\": \"UTC-1, DST to UTC+0. Azores (Portugal).\",\n      \"Africa/Abidjan\": \"UTC+0, no DST. Iceland; West Africa: Ghana, Senegal, Ivory Coast, Mali, Sierra Leone, Liberia, Gambia, Guinea, Burkina Faso, Togo.\",\n      \"Europe/London\": \"UTC+0, DST to UTC+1. United Kingdom, Ireland, Portugal (Lisbon), Canary Islands, Faroe Islands.\",\n      \"Africa/Lagos\": \"UTC+1, no DST. Nigeria, Algeria, Tunisia, Morocco, Cameroon, Angola, DR Congo (Kinshasa), Congo, Gabon, Chad, Niger.\",\n      \"Europe/Paris\": \"UTC+1, DST to UTC+2. Central Europe: France, Germany, Spain, Italy, Netherlands, Belgium, Switzerland, Austria, Poland, Czechia, Sweden, Norway, Denmark, Hungary, Croatia, Serbia, Slovakia, Slovenia, Luxembourg, Malta.\",\n      \"Africa/Johannesburg\": \"UTC+2, no DST. South Africa, Zimbabwe, Zambia, Mozambique, Malawi, Botswana, Rwanda, Burundi, Libya, Sudan, Namibia, DR Congo (Lubumbashi).\",\n      \"Europe/Athens\": \"UTC+2, DST to UTC+3. Eastern Europe: Greece, Romania, Bulgaria, Finland, Ukraine, Moldova, Estonia, Latvia, Lithuania, Cyprus; Egypt; Israel; Lebanon.\",\n      \"Europe/Istanbul\": \"UTC+3, no DST. Turkey, Saudi Arabia, Qatar, Kuwait, Bahrain, Iraq, Jordan, Syria, Yemen; Moscow and western Russia; Belarus; East Africa: Kenya, Ethiopia, Tanzania, Uganda, Somalia, Madagascar.\",\n      \"Asia/Tehran\": \"UTC+3:30, no DST. Iran.\",\n      \"Asia/Dubai\": \"UTC+4, no DST. United Arab Emirates, Oman, Azerbaijan, Georgia, Armenia, Mauritius, Seychelles, Reunion, Samara (Russia).\",\n      \"Asia/Kabul\": \"UTC+4:30, no DST. Afghanistan.\",\n      \"Asia/Karachi\": \"UTC+5, no DST. Pakistan, Uzbekistan, Tajikistan, Turkmenistan, Kazakhstan, Maldives, Yekaterinburg (Russia).\",\n      \"Asia/Kolkata\": \"UTC+5:30, no DST. India, Sri Lanka.\",\n      \"Asia/Kathmandu\": \"UTC+5:45, no DST. Nepal.\",\n      \"Asia/Dhaka\": \"UTC+6, no DST. Bangladesh, Bhutan, Kyrgyzstan, Omsk (Russia).\",\n      \"Asia/Yangon\": \"UTC+6:30, no DST. Myanmar, Cocos Islands.\",\n      \"Asia/Bangkok\": \"UTC+7, no DST. Thailand, Vietnam, Cambodia, Laos, western Indonesia (Jakarta), Novosibirsk and Krasnoyarsk (Russia), western Mongolia.\",\n      \"Asia/Singapore\": \"UTC+8, no DST. China, Hong Kong, Taiwan, Singapore, Malaysia, Philippines, central Indonesia (Bali), Western Australia (Perth), Mongolia (Ulaanbaatar), Irkutsk (Russia).\",\n      \"Australia/Eucla\": \"UTC+8:45, no DST. Eucla, Western Australia.\",\n      \"Asia/Tokyo\": \"UTC+9, no DST. Japan, South Korea, North Korea, eastern Indonesia (Papua), Timor-Leste, Palau, Yakutsk (Russia).\",\n      \"Australia/Darwin\": \"UTC+9:30, no DST. Northern Territory, Australia.\",\n      \"Australia/Adelaide\": \"UTC+9:30, DST to UTC+10:30 in southern summer. South Australia; Broken Hill.\",\n      \"Australia/Brisbane\": \"UTC+10, no DST. Queensland (Australia), Guam, Papua New Guinea, Vladivostok (Russia).\",\n      \"Australia/Sydney\": \"UTC+10, DST to UTC+11 in southern summer. New South Wales, Victoria (Melbourne), ACT (Canberra), Tasmania (Hobart).\",\n      \"Australia/Lord_Howe\": \"UTC+10:30, DST to UTC+11 in southern summer. Lord Howe Island.\",\n      \"Pacific/Guadalcanal\": \"UTC+11, no DST. Solomon Islands, New Caledonia, Vanuatu, Bougainville, Magadan and Sakhalin (Russia).\",\n      \"Pacific/Norfolk\": \"UTC+11, DST to UTC+12 in southern summer. Norfolk Island.\",\n      \"Pacific/Fiji\": \"UTC+12, no DST. Fiji, Marshall Islands, Tuvalu, Kamchatka (Russia).\",\n      \"Pacific/Auckland\": \"UTC+12, DST to UTC+13 in southern summer. New Zealand.\",\n      \"Pacific/Chatham\": \"UTC+12:45, DST to UTC+13:45 in southern summer. Chatham Islands (New Zealand).\",\n      \"Pacific/Tongatapu\": \"UTC+13, no DST. Tonga, Samoa, Tokelau, Phoenix Islands.\",\n      \"Pacific/Kiritimati\": \"UTC+14, no DST. Line Islands (Kiribati).\",\n      \"unknown\": \"The lead data has no real location signal (no city, region, country, phone country code, or location-specific domain), or the signals conflict too much to pick one.\"\n    }\n  },\n  \"is_decision_maker\": {\n    \"type\": \"noul\",\n    \"instructions\": \"Based on this lead's title and company, can this person approve paying for an outside service for their business, such as an AI automation setup?\",\n    \"criteria\": {\n      \"true\": \"Owner, founder, partner, executive, or department head with budget authority\",\n      \"false\": \"Individual contributor, assistant, intern, student, or someone who would need a boss to sign off\"\n    }\n  },\n  \"lead_fit\": {\n    \"type\": \"score\",\n    \"instructions\": \"How well does this lead fit a service that sets up AI automations for small and mid-size traditional businesses, such as trades, clinics, law and accounting firms, agencies, and local services?\",\n    \"criteria\": [\n      \"Not a fit: student, job seeker, large enterprise, or a company that sells AI software itself\",\n      \"Weak fit: the right kind of business, but the role or company size is a stretch\",\n      \"Good fit: a small or mid-size traditional business and a relevant role\",\n      \"Ideal fit: owner or operator of a small or mid-size traditional business with obvious manual work to automate\"\n    ]\n  }\n}",
+        "questionsJson": "{\n  \"timezone\": {\n    \"type\": \"choice\",\n    \"instructions\": \"Which time zone does the person described in `lead` most likely work in day to day? Use every location signal in `lead`: phone country and area code, email or website domain, LinkedIn location, company headquarters, and notes (local places, weather, habits like not changing the clocks). The person's own location outranks their company's headquarters. `me` is the seller doing the outreach; never use `me` as a location signal for the lead. Pick unknown when `lead` has no real location signal.\",\n    \"criteria\": {\n      \"Pacific/Pago_Pago\": \"UTC-11, no DST. American Samoa, Niue, Midway.\",\n      \"Pacific/Honolulu\": \"UTC-10, no DST. Hawaii, Cook Islands, Tahiti.\",\n      \"America/Adak\": \"UTC-10, DST to UTC-9. Aleutian Islands, Alaska.\",\n      \"America/Anchorage\": \"UTC-9, DST to UTC-8. Alaska (Anchorage, Juneau, Fairbanks).\",\n      \"America/Los_Angeles\": \"UTC-8, DST to UTC-7. US Pacific: California, Washington, Oregon, Nevada; British Columbia (Vancouver); Tijuana.\",\n      \"America/Phoenix\": \"UTC-7, no DST. Arizona (except Navajo Nation), Yukon, northeast British Columbia, Sonora (Hermosillo).\",\n      \"America/Denver\": \"UTC-7, DST to UTC-6. US Mountain: Colorado, Utah, New Mexico, Montana, Wyoming, southern Idaho; Alberta (Calgary, Edmonton); Ciudad Juarez.\",\n      \"America/Mexico_City\": \"UTC-6, no DST. Most of Mexico (Mexico City, Guadalajara, Monterrey); Central America (Guatemala, Costa Rica, El Salvador, Honduras, Nicaragua, Belize); Saskatchewan (Regina).\",\n      \"America/Chicago\": \"UTC-6, DST to UTC-5. US Central: Texas, Illinois, Minnesota, Missouri, Louisiana, Wisconsin, Tennessee (west), Oklahoma, Kansas, Iowa, Alabama, Mississippi; Manitoba (Winnipeg).\",\n      \"America/Bogota\": \"UTC-5, no DST. Colombia, Peru, Ecuador, Panama, Jamaica; Quintana Roo, Mexico (Cancun).\",\n      \"America/New_York\": \"UTC-5, DST to UTC-4. US Eastern: New York, Florida, Georgia, Pennsylvania, Ohio, Michigan, Massachusetts, North and South Carolina, Virginia, DC, Maryland, New Jersey, Indiana (most); Ontario (Toronto, Ottawa); Quebec (Montreal); Bahamas; Haiti; Cuba.\",\n      \"America/Caracas\": \"UTC-4, no DST. Venezuela, Bolivia, Puerto Rico, Dominican Republic, Trinidad, Barbados, most of the Eastern Caribbean, western Brazil (Manaus), Guyana.\",\n      \"America/Halifax\": \"UTC-4, DST to UTC-3. Atlantic Canada: Nova Scotia, New Brunswick, Prince Edward Island, Labrador; Bermuda.\",\n      \"America/Santiago\": \"UTC-3 in southern summer, UTC-4 in southern winter. Chile (mainland).\",\n      \"America/St_Johns\": \"UTC-3:30, DST to UTC-2:30. Newfoundland, Canada.\",\n      \"America/Sao_Paulo\": \"UTC-3, no DST. Brazil (Sao Paulo, Rio de Janeiro, Brasilia, most of the east); Argentina (Buenos Aires); Uruguay; Paraguay; Suriname; French Guiana; Falkland Islands.\",\n      \"America/Nuuk\": \"UTC-2, DST to UTC-1. Greenland (Nuuk).\",\n      \"America/Noronha\": \"UTC-2, no DST. Fernando de Noronha (Brazil), South Georgia.\",\n      \"Atlantic/Cape_Verde\": \"UTC-1, no DST. Cape Verde.\",\n      \"Atlantic/Azores\": \"UTC-1, DST to UTC+0. Azores (Portugal).\",\n      \"Africa/Abidjan\": \"UTC+0, no DST. Iceland; West Africa: Ghana, Senegal, Ivory Coast, Mali, Sierra Leone, Liberia, Gambia, Guinea, Burkina Faso, Togo.\",\n      \"Europe/London\": \"UTC+0, DST to UTC+1. United Kingdom, Ireland, Portugal (Lisbon), Canary Islands, Faroe Islands.\",\n      \"Africa/Lagos\": \"UTC+1, no DST. Nigeria, Algeria, Tunisia, Morocco, Cameroon, Angola, DR Congo (Kinshasa), Congo, Gabon, Chad, Niger.\",\n      \"Europe/Paris\": \"UTC+1, DST to UTC+2. Central Europe: France, Germany, Spain, Italy, Netherlands, Belgium, Switzerland, Austria, Poland, Czechia, Sweden, Norway, Denmark, Hungary, Croatia, Serbia, Slovakia, Slovenia, Luxembourg, Malta.\",\n      \"Africa/Johannesburg\": \"UTC+2, no DST. South Africa, Zimbabwe, Zambia, Mozambique, Malawi, Botswana, Rwanda, Burundi, Libya, Sudan, Namibia, DR Congo (Lubumbashi).\",\n      \"Europe/Athens\": \"UTC+2, DST to UTC+3. Eastern Europe: Greece, Romania, Bulgaria, Finland, Ukraine, Moldova, Estonia, Latvia, Lithuania, Cyprus; Egypt; Israel; Lebanon.\",\n      \"Europe/Istanbul\": \"UTC+3, no DST. Turkey, Saudi Arabia, Qatar, Kuwait, Bahrain, Iraq, Jordan, Syria, Yemen; Moscow and western Russia; Belarus; East Africa: Kenya, Ethiopia, Tanzania, Uganda, Somalia, Madagascar.\",\n      \"Asia/Tehran\": \"UTC+3:30, no DST. Iran.\",\n      \"Asia/Dubai\": \"UTC+4, no DST. United Arab Emirates, Oman, Azerbaijan, Georgia, Armenia, Mauritius, Seychelles, Reunion, Samara (Russia).\",\n      \"Asia/Kabul\": \"UTC+4:30, no DST. Afghanistan.\",\n      \"Asia/Karachi\": \"UTC+5, no DST. Pakistan, Uzbekistan, Tajikistan, Turkmenistan, Kazakhstan, Maldives, Yekaterinburg (Russia).\",\n      \"Asia/Kolkata\": \"UTC+5:30, no DST. India, Sri Lanka.\",\n      \"Asia/Kathmandu\": \"UTC+5:45, no DST. Nepal.\",\n      \"Asia/Dhaka\": \"UTC+6, no DST. Bangladesh, Bhutan, Kyrgyzstan, Omsk (Russia).\",\n      \"Asia/Yangon\": \"UTC+6:30, no DST. Myanmar, Cocos Islands.\",\n      \"Asia/Bangkok\": \"UTC+7, no DST. Thailand, Vietnam, Cambodia, Laos, western Indonesia (Jakarta), Novosibirsk and Krasnoyarsk (Russia), western Mongolia.\",\n      \"Asia/Singapore\": \"UTC+8, no DST. China, Hong Kong, Taiwan, Singapore, Malaysia, Philippines, central Indonesia (Bali), Western Australia (Perth), Mongolia (Ulaanbaatar), Irkutsk (Russia).\",\n      \"Australia/Eucla\": \"UTC+8:45, no DST. Eucla, Western Australia.\",\n      \"Asia/Tokyo\": \"UTC+9, no DST. Japan, South Korea, North Korea, eastern Indonesia (Papua), Timor-Leste, Palau, Yakutsk (Russia).\",\n      \"Australia/Darwin\": \"UTC+9:30, no DST. Northern Territory, Australia.\",\n      \"Australia/Adelaide\": \"UTC+9:30, DST to UTC+10:30 in southern summer. South Australia; Broken Hill.\",\n      \"Australia/Brisbane\": \"UTC+10, no DST. Queensland (Australia), Guam, Papua New Guinea, Vladivostok (Russia).\",\n      \"Australia/Sydney\": \"UTC+10, DST to UTC+11 in southern summer. New South Wales, Victoria (Melbourne), ACT (Canberra), Tasmania (Hobart).\",\n      \"Australia/Lord_Howe\": \"UTC+10:30, DST to UTC+11 in southern summer. Lord Howe Island.\",\n      \"Pacific/Guadalcanal\": \"UTC+11, no DST. Solomon Islands, New Caledonia, Vanuatu, Bougainville, Magadan and Sakhalin (Russia).\",\n      \"Pacific/Norfolk\": \"UTC+11, DST to UTC+12 in southern summer. Norfolk Island.\",\n      \"Pacific/Fiji\": \"UTC+12, no DST. Fiji, Marshall Islands, Tuvalu, Kamchatka (Russia).\",\n      \"Pacific/Auckland\": \"UTC+12, DST to UTC+13 in southern summer. New Zealand.\",\n      \"Pacific/Chatham\": \"UTC+12:45, DST to UTC+13:45 in southern summer. Chatham Islands (New Zealand).\",\n      \"Pacific/Tongatapu\": \"UTC+13, no DST. Tonga, Samoa, Tokelau, Phoenix Islands.\",\n      \"Pacific/Kiritimati\": \"UTC+14, no DST. Line Islands (Kiribati).\",\n      \"unknown\": \"The lead data has no real location signal (no city, region, country, phone country code, or location-specific domain), or the signals conflict too much to pick one.\"\n    }\n  },\n  \"is_decision_maker\": {\n    \"type\": \"noul\",\n    \"instructions\": \"Based on the title, company and notes in `lead`, can this person approve paying for an outside service like the one described in `me.business`, without someone else signing off?\",\n    \"criteria\": {\n      \"true\": \"Owner, founder, partner, executive, or department head with budget authority\",\n      \"false\": \"Individual contributor, assistant, coordinator, intern, student, someone the notes say needs a boss to sign off, or too little in `lead` to tell\"\n    }\n  },\n  \"lead_fit\": {\n    \"type\": \"score\",\n    \"instructions\": \"How well does the person in `lead` fit what `me` sells? Judge against `me.business`, `me.ideal_customer` and `me.not_a_fit`.\",\n    \"criteria\": [\n      \"Not a fit: matches `me.not_a_fit`, or there is too little in `lead` to tell\",\n      \"Weak fit: the right kind of business for `me`, but the role or company size is a stretch\",\n      \"Good fit: the kind of business in `me.ideal_customer`, and a relevant role\",\n      \"Ideal fit: an owner or operator of the kind of business in `me.ideal_customer`, with obvious manual work `me` could automate\"\n    ]\n  }\n}",
         "options": {}
       },
       "id": "aa91eb80-3af3-5ce4-886e-f99bcb1cb4ed",
@@ -88,20 +87,20 @@
       "type": "@typesafe-ai/n8n-nodes-typesafe-ai.typeSafeAi",
       "typeVersion": 1,
       "position": [
-        700,
+        704,
         400
       ]
     },
     {
       "parameters": {
-        "jsCode": "// Turn Jev's answers into flat fields your CRM can store.\n// Jev's guess goes in timezone_inferred, so it never overwrites a value a person entered.\nconst THRESHOLD = 0.8; // minimum confidence to write the time zone automatically\n\nreturn $input.all().map((item) => {\n  const { answers, model, ...lead } = item.json;\n  const tz = answers.timezone;\n  const confident = tz.choice !== 'unknown' && tz.confidence >= THRESHOLD;\n  return {\n    json: {\n      ...lead,\n      timezone_inferred: tz.choice,\n      timezone_confidence: Number(tz.confidence.toFixed(2)),\n      timezone_status: confident ? 'auto' : 'review',\n      decision_maker_probability: Number(answers.is_decision_maker.noul.toFixed(2)),\n      lead_fit_score: Number(answers.lead_fit.score.toFixed(2)), // 0 = not a fit, 3 = ideal\n      jev_model: model,\n    },\n  };\n});\n"
+        "jsCode": "// Turn Jev's answers into flat fields your CRM can store.\n// Jev's guess goes in timezone_inferred, so it never overwrites a value a person entered.\nconst THRESHOLD = 0.8; // minimum confidence to write the time zone automatically\n\nreturn $input.all().map((item) => {\n  const { answers, model, me, lead } = item.json;\n  const tz = answers.timezone;\n  const confident = tz.choice !== 'unknown' && tz.confidence >= THRESHOLD;\n  return {\n    json: {\n      ...lead,\n      timezone_inferred: tz.choice,\n      timezone_confidence: Number(tz.confidence.toFixed(2)),\n      timezone_status: confident ? 'auto' : 'review',\n      decision_maker_probability: Number(answers.is_decision_maker.noul.toFixed(2)),\n      lead_fit_score: Number(answers.lead_fit.score.toFixed(2)), // 0 = not a fit, 3 = ideal\n      jev_model: model,\n      me, // kept for the next step; dropped before write-back\n    },\n  };\n});\n"
       },
       "id": "b00eb02f-7654-5b91-a0dc-02a9a30352c9",
       "name": "Flatten answers",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        940,
+        944,
         400
       ]
     },
@@ -134,7 +133,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1160,
+        1168,
         400
       ]
     },
@@ -145,8 +144,8 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1400,
-        300
+        1648,
+        304
       ]
     },
     {
@@ -156,13 +155,13 @@
       "type": "n8n-nodes-base.noOp",
       "typeVersion": 1,
       "position": [
-        1400,
-        500
+        1648,
+        512
       ]
     },
     {
       "parameters": {
-        "content": "## Lead time zones with Jev\n\nStop paying an LLM to write an essay about where someone lives. Jev (TypeSafe AI) answers with a typed value and a probability.\n\nOne request asks three questions, one of each type:\n- **Choice** `timezone`: one of 51 time zones, or `unknown`\n- **Noul** `is_decision_maker`: probability of yes, 0 to 1\n- **Score** `lead_fit`: 0 (not a fit) to 3 (ideal)\n\nOnly leads with a confident time zone get written back. Everything else goes to review.\n\n**Setup:** install the verified **TypeSafe AI** node, add your API key from typesafe.ai, then swap the sample leads node for your CRM.",
+        "content": "## Lead time zones with Jev\n\nStop paying an LLM to write an essay about where someone lives. Jev (TypeSafe AI) answers with a typed value and a probability.\n\nEach lead goes in with `me` (who's doing the outreach). One request asks three questions, one of each type:\n- **Choice** `timezone`: one of 51 time zones, or `unknown`\n- **Noul** `is_decision_maker`: probability of yes, 0 to 1\n- **Score** `lead_fit`: 0 (not a fit) to 3 (ideal), judged against `me`\n\nOnly leads with a confident time zone get written back, with the next 9am their time shown on your clock. Everything else goes to review.\n\n**Setup:** install the verified **TypeSafe AI** node, add your API key from typesafe.ai, edit `me`, then swap the sample leads for your CRM.",
         "height": 440,
         "width": 520,
         "color": 5
@@ -172,11 +171,25 @@
       "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        -40,
-        -200
+        0,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Plain logic, no AI. Jev already picked the time zone; this is just arithmetic.\n// Find the next 9am in the lead's time zone, then show it on my clock.\nreturn $input.all().map((item) => {\n  const { me, ...lead } = item.json;\n  const now = DateTime.now();\n  let theirs = now.setZone(lead.timezone_inferred).set({ hour: 9, minute: 0, second: 0, millisecond: 0 });\n  if (theirs <= now) theirs = theirs.plus({ days: 1 });\n  const mine = theirs.setZone(me.timezone);\n  return {\n    json: {\n      ...lead,\n      send_at_their_time: theirs.toFormat('ccc h:mm a ZZZZ'),\n      send_at_my_time: mine.toFormat('ccc h:mm a ZZZZ'),\n      send_at_utc: theirs.toUTC().toISO(),\n    },\n  };\n});\n"
+      },
+      "id": "c35350d3-ab86-47f6-9fad-f03e1f06e029",
+      "name": "9am their time, on my clock",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1408,
+        304
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "Run on demand": {
       "main": [
@@ -244,7 +257,7 @@
       "main": [
         [
           {
-            "node": "Write back to CRM (replace me)",
+            "node": "9am their time, on my clock",
             "type": "main",
             "index": 0
           }
@@ -257,14 +270,25 @@
           }
         ]
       ]
+    },
+    "9am their time, on my clock": {
+      "main": [
+        [
+          {
+            "node": "Write back to CRM (replace me)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "pinData": {},
   "settings": {
-    "executionOrder": "v1"
+    "executionOrder": "v1",
+    "binaryMode": "separate"
   },
+  "tags": [],
   "meta": {
     "templateCredsSetupCompleted": false
-  },
-  "tags": []
+  }
 }

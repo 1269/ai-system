@@ -31,7 +31,7 @@ Set up a self-hosted n8n instance on this machine that you (Claude Code) can bui
 
 7. Prove it works. Using the n8n MCP server, list what you can see on the instance (workflows, and whether the TypeSafe AI node is available). Tell me in two or three lines what you found.
 
-8. The template (optional, ask me first). Offer to bring in the "Lead time zones with Jev" workflow from https://github.com/1269/ai-system/tree/main/09-automation/n8n/lead-timezones-jev. If I say yes, download lead-timezones-jev.json and either create it in my n8n through the MCP server, or tell me to import it with Import from File, whichever works. Then tell me to open the Jev node and select my TypeSafe AI API credential before I run it.
+8. The template (optional, ask me first). Offer to bring in the "Lead time zones with Jev" workflow from https://github.com/1269/ai-system/tree/main/09-automation/n8n/lead-timezones-jev. If I say yes, download lead-timezones-jev.json and either create it in my n8n through the MCP server, or tell me to import it with Import from File, whichever works. Then tell me to open the Jev node and select my TypeSafe AI API credential, and to edit `me` in the sample leads node (my business, ideal customer and time zone) before I run it.
 
 When everything is done, give me a short summary: where compose.yaml is, the editor URL, how to stop, start and update n8n (change the pinned version and run docker compose up -d), and where my data lives (the n8n_data volume) so I know not to delete it.
 ```
