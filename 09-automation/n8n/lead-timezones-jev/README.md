@@ -32,7 +32,7 @@ Leads that already have a time zone skip Jev entirely. Known facts stay in plain
 
 ## What the sample leads show
 
-The sample data has seven leads, picked to show where this beats a lookup table:
+The sample data has eleven leads, picked to show where this beats a lookup table. The first seven:
 
 | Lead | Signal | Jev's answer |
 | --- | --- | --- |
@@ -44,6 +44,15 @@ The sample data has seven leads, picked to show where this beats a lookup table:
 | Chris, intern | A gmail address and nothing else | `unknown`, sent to review |
 
 These are real results from `jev-1.13.0`, every one at 0.96 confidence or higher. The seventh lead already has a time zone, so it never reaches Jev.
+
+The last four are the leads from the video's live run:
+
+| Lead | Signal | Jev's answer |
+| --- | --- | --- |
+| Ray, roofing | A 602 number, and his notes say "we never change our clocks out here" | `America/Phoenix` (no daylight saving, so a lookup table that says Mountain time is wrong half the year) |
+| Lena, legal staffing | Company HQ is Chicago, but a +49 30 phone and notes that say she moved to Berlin | `Europe/Paris`, the zone in the list that shares Berlin's clock (the person beats the HQ) |
+| Mia, physio clinic | A `.com.au` email, a +61 8 phone, and the Fremantle Doctor in her notes | `Asia/Singapore`, the zone in the list that shares Perth's clock |
+| A gmail address | Nothing else | `unknown`, sent to review |
 
 ## Set it up
 
